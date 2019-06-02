@@ -4,10 +4,11 @@ include '../../../config/autoload.php';
 $postgres = new connexion();
 $conn = $postgres->connect();
 
+//récupération des données entrées
 $debut = $_POST['debut'];
 $fin = $_POST['fin'];
 
-
+//requête sql
 
 $sql ="
         SELECT COUNT(reference),(SELECT COUNT(reference) FROM sead.etude 
@@ -23,7 +24,7 @@ $sql ="
  $dataOut = $postgres->getSQL($conn, $sql);
 
 
-//$dataPoints = array();
+
 
  foreach ($dataOut as $key => $row) {
    
@@ -32,7 +33,7 @@ $sql ="
         array("y" => $row['terminee'],"name" => "Etudes terminée")]
     ;
     
-    //array_push($dataPoints, $dataPoi);
+    
 }
 
 echo json_encode($dataPoints);
