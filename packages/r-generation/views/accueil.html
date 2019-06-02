@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Génération de template</h2>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-8 size-border-design" ondrop="drop(event)" ondragover="allowDrop(event)" id="contenu-generation">
+
+    </div>
+    <div class="col-sm-4 size-border-element">
+        <div class="row">
+            <div class="col-sm-12">
+                <ul>
+                    <li class="cursor-pointer">
+                        <span draggable="true" ondragstart="drag(event)" id="myButtonCreate">Button</span>
+                    </li>
+                    <li class="cursor-pointer">
+                        <span draggable="true" ondragstart="drag(event)" id="myInputCreate">Input</span>
+                    </li>
+                    <li class="cursor-pointer">
+                        <span draggable="true" ondragstart="drag(event)" id="myLabelCreate">Label</span>
+                    </li>
+                    <li class="cursor-pointer">
+                        <span draggable="true" ondragstart="drag(event)" id="myTextareaCreate">TextArea</span>
+                    </li>
+                    <li class="cursor-pointer">
+                        <span draggable="true" ondragstart="drag(event)" id="myTableCreate">Table</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row espacetopbot">
+    <div class="col-sm-1">Liste des sous projets</div>
+    <div class="col-sm-2">        
+        <select class="form-control" ng-options="sous for sous in dossiers" ng-model="generation.sousProjet">            
+        </select>
+    </div>
+    <div class="col-sm-2">        
+        <input class="form-control" placeholder="Nom du fichier: 'monfichier.[html/php]'" ng-model="generation.nomFichier"/>
+    </div>
+    <div class="col-sm-1">
+        <button class="btn btn-default" ng-click="enregistrerGeneration(generation)">Générer html</button>
+    </div>
+</div>
+<div ng-modaldloader></div>
+<toast></toast>

@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-1" >
+        <label>Période du:</label>
+    </div>
+    <div class="col-md-4" >
+        <input type="text" class="form-control" ng-datepicker ng-model="modelDebut" name="" >
+    </div>
+    <div class="col-md-1 text-center">
+        <label>au:</label>        
+    </div>
+    <div class="col-md-4">
+        <input type="text" class="form-control" ng-datepicker ng-model="modelFin" name="">
+    </div>
+    <div class="col-md-2 ">
+        <div class="">
+            <button class="btn btn-success" ng-click="actionRechercher(modelDebut, modelFin)">Rechercher</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <div id="chart1" class="col-md-8 height-canvas">
+    </div>
+</div>
+<div class="col-md-6">
+        <table class="table table-bordered table-striped margin-top">
+            <tr>
+                <th  class="text-center">Année</th>
+                <th  class="text-center">Client</th>
+                <th  class="text-center">Demandeur Jouve</th>
+            </tr>
+            <tr ng-repeat="x in names">
+                <td align="center">{{x.annee}}</td>
+                <td align="center">{{x.client}}</td>
+                <td align="center">{{x.demandeur}}</td>
+            </tr>
+        </table>
+    </div>
+
+<div ng-modaldefault></div>
+<div ng-modaldloader></div>
+

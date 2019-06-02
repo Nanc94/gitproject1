@@ -1,0 +1,18 @@
+/*Génération template*/
+.size-border-design {
+    border: 1px solid #bbc3c391;
+    resize: both;
+    overflow: auto;
+    height: 600px;
+    padding: 10px;
+}
+
+.size-border-element {
+    border: 1px solid #d8dddd;
+    background-color: #cbd2dc3b;
+    padding: 10px;
+}
+
+.btn-generation,.input-generation, .label-generation,.table-generation {
+    position: absolute;
+}

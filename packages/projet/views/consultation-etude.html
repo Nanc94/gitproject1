@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="text-center">Consultation  d'une fiche étude</h1>    
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <br/>
+        <label for="id_recherche" >Entrer votre recherche</label>
+        <input type="text" class="form-control fixed-width-350" name="Entrer votre recherche" id="id_recherche" ng-model="nom_recherche" ng-change="rechercher_nom(nom_recherche)" ng-focus="afficherListe()"> 
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="fixed-width-350 fixed-height-300 border-solid" ng-if="affiche">
+            <div ng-repeat = "fiche in simplementPourDev">
+                <div class="block-resultat" ng-click="choix(fiche)">{{fiche.nomx}}</div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="row" >
+    <div class="col-sm-12">
+<div style="margin-top:50px; padding:4px; border:4px solid #e0e0e0;">
+        <div>Date de la demande: {{ficheSelectionnee.date_demande}}</div> 
+        <div></div>
+        <div>Date de reception:{{ficheSelectionnee.date_reception}}</div>
+        <div></div>
+        <div>Ecart de l'envoi:{{ficheSelectionnee.ecart_envoi}}</div>
+        <div></div>
+        <div>Date de remise de la demande:{{ficheSelectionnee.date_remise_demande}}</div>
+        <div></div>
+        <div>Date de remise réelle:{{ficheSelectionnee.date_remise_reelle}}</div>
+        <div></div>
+        <div>Reférence:{{ficheSelectionnee.reference}}</div>
+        <div></div>
+        <div>libellé1:{{ficheSelectionnee.libelle1}}</div>
+        <div></div>
+        <div>libellé2:{{ficheSelectionnee.libelle2}}</div>
+        <div></div>
+        <div>libellé3:{{ficheSelectionnee.libelle3}}</div>
+        <div></div>
+        <div>Nom demandeur:{{ficheSelectionnee.nom1}}</div>
+        <div></div>
+        <div>Prénom demandeur:{{ficheSelectionnee.prenom1}}</div>
+        <div></div>
+        <div>Société demandeur:{{ficheSelectionnee.societe1}}</div>
+        <div></div>
+        <div>Mail demandeur:{{ficheSelectionnee.mail1}}</div>
+        <div></div>
+        <div>Nom client:{{ficheSelectionnee.nom2}}</div>
+        <div></div>
+        <div>Prénom client:{{ficheSelectionnee.prenom2}}</div>
+        <div></div>
+        <div>Mail client:{{ficheSelectionnee.mail2}}</div>
+        <div></div>
+        <div>Société client:{{ficheSelectionnee.societe2}}</div>
+        <div></div>
+        <div>Taux de qualité proposé(un ou plusieurs):{{ficheSelectionnee.taux_qte1}}</div>
+        <div></div>
+        <div>Particularité(un ou plusieurs):{{ficheSelectionnee.particul2}}</div>
+        <div></div>
+        <div>Taux de qualité:{{ficheSelectionnee.taux-qt2}}</div>
+        <div></div>
+        <div>Vitesse TEC:{{ficheSelectionnee.vitesse_tec}}</div>
+        <div></div>
+        <div>libellé5:{{ficheSelectionnee.libelle5}}</div>
+        <div></div>
+        <div>Libellé6:{{ficheSelectionnee.libelle6}}</div>
+        <div></div>
+        <div>Nom de l'outils:{{ficheSelectionnee.nom_outil}}</div>
+        <div></div>
+        <div>Nom Chef de projet:{{ficheSelectionnee.nom_cp}}</div>
+        <div></div>
+        <div>Dossier gagnée:{{ficheSelectionnee.dossier_gagne}}</div>
+        <div></div>
+        <div>Motif de non de validation:{{ficheSelectionnee.motif_non_validation}}</div>
+        <div></div>
+        <div>Début de traitement de demande:{{ficheSelectionnee.debut_traitement_demande}}</div>
+        <div></div>
+        <div>Début de traitement:{{ficheSelectionnee.debut_traitement}}</div>
+        <div></div>
+        <div>Ecart de demarrage:{{ficheSelectionnee.ecart_demarrage}}</div>
+        <div></div>
+        <div>{{ficheSelectionnee.id_ligne}}</div>
+        <div>Chef de projet (un ou plusieurs):{{ficheSelectionnee.cp}}</div>
+        <div></div>
+        <div>Unité:{{ficheSelectionnee.unite_heure}}</div>
+        <div></div>
+        <button ng-click="downloadPDF">Export to PDF </button>
+
+        
+</div>
+    </div>
+</div>
+<div ng-modaldefault></div>
+<div ng-modaldloader></div>
+<toast></toast>

@@ -1,0 +1,18 @@
+<h1>Bienvenue</h1>
+<h2>Votre page accueil</h2>
+<div>
+    <button ng-click="actionShowModal()" class="btn btn-default">Voir modal</button>
+</div>
+<br/>
+<div>
+    <input type="text" class="form-control" ng-datepicker placeholder="JJ/MM/AAAA"/>
+</div>
+<br/>
+<p>Controller :{{yourName}}</p>
+<div>Postgres</div>
+<ul>
+    <li ng-repeat="data in datas">{{data.datid}}</li>
+</ul>
+<div ng-modaldefault></div>
+<div ng-modaldloader></div>
+

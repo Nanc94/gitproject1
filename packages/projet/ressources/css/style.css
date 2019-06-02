@@ -1,0 +1,54 @@
+.padding-top-btn {
+    padding-top: 25px;
+}
+
+.height-canvas {
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    margin-left: 150px;
+}
+.height-canvas1 {
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    margin-left: 350px;
+}
+.fixed-width-350{
+    width: 350px !important;
+}
+
+.fixed-height-600{
+    height: 600px;
+}
+
+.fixed-height-300{
+    max-height: 300px;
+}
+
+.border-solid{
+    border: 1px solid #ccc;
+    overflow-y: scroll;
+}
+
+.block-resultat {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 2px;
+}
+
+.block-resultat:hover {
+    cursor: pointer;
+    background-color: #ccc;
+}
+.centreHHorizontalement {
+ display: inline-block;
+ vertical-align: middle;
+ float: none;
+}
+.height-canvas2 {
+    width: 100%;
+    height: 400px;
+    margin-top: 30px;
+    margin-left: 400px;
+}

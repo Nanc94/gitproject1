@@ -1,0 +1,23 @@
+<div class="espace-login">
+    <div class="form-login box-shadow">
+        <div class="banner">
+            <div class="banner-content">
+                <span>Authentification projet SEAD</span>
+            </div>
+        </div>
+        <form>
+            <div class="espace-saisie">
+                <div class="full-ligne">
+                    <input type="text" class="login form-control" placeholder="matricule" ng-model="login.matricule" required/>
+                </div>        
+                <div class="full-ligne">
+                    <input type="password" class="password form-control" placeholder="Mot de passe" ng-model="login.password" required/>
+                </div>
+                <div class="full-ligne">
+                    <button class="btn btn-secondary" ng-click="actionLogin(login)">Valider</button>
+                    <span class="txt-alert" ng-show="showError">Matricule ou Mot de passe incorrect</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

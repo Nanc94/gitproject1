@@ -1,0 +1,119 @@
+<h1>Bienvenue</h1>
+<h2></h2>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Action</th>
+                    <th>Commentaire</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Afficher modal</td>
+                    <td><button ng-click="actionShowModal()" class="btn btn-secondary">Afficher modal</button></td>
+                    <td><textarea class="form-control">Permet d'afficher un boite modal pour mettre en évidence une message ou une action donnée.</textarea></td>
+                </tr>
+<!--                <tr>
+                    <td>Saisir une date</td>                    
+                    <td>
+                        <ng-datepicker ng-model="modelDate" format="DD.MM.YYYY" firstWeekDaySunday="true" view-format="DD/MM/YYYY" placeholder="JJ/MM/AAAA" class="form-control"></ng-datepicker>
+                        <input type="text" class="form-control" ng-datepicker placeholder="JJ/MM/AAAA" id="dateDefautl"/>
+                    </td>                    
+                    <td>
+                        <textarea class="form-control">Ajouter ng-datepicker comme element dans l'input.
+                        exemple : <ng-datepicker ng-model="modelDate" format="DD.MM.YYYY" view-format="DD/MM/YYYY" placeholder="JJ/MM/AAAA" class="form-control"></ng-datepicker>
+                        </textarea>
+                    </td>
+                </tr>-->
+                <tr>
+                    <td>Saisir une date</td>                    
+                    <td>
+                        <!--<ng-datepicker ng-model="modelDate" format="DD.MM.YYYY" firstWeekDaySunday="true" view-format="DD/MM/YYYY" placeholder="JJ/MM/AAAA" class="form-control"></ng-datepicker>-->
+                        <!--<input type="text" class="form-control" ng-datepicker placeholder="JJ/MM/AAAA" id="dateDefautl"/>-->
+                        <input type="text" class="form-control" ng-datepicker ng-model="modelDate" name="">
+                    </td>                    
+                    <td>
+                        <textarea class="form-control">Ajouter ng-datepicker comme element dans l'input.
+                        exemple : <input type="text" class="form-control" ng-datepicker ng-model="modelDate" name="">
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Afficher une notification temporaire de 3s</td>                    
+                    <td><button ng-click="actionShowNotification()" class="btn btn-default">Afficher notification</button></td>                 
+                    <td><textarea class="form-control">Permet d'afficher une notification personnaliser pendant 3 seconds avec trois couleur "success,warning,danger,default" 
+                        $rootScope.showThisNotification("Bienvenu sur Raptor.",'success');</textarea></td>
+                </tr>
+                <tr>
+                    <td>Afficher une notification temporaire avec toast</td>                    
+                    <td><button ng-click="actionShowToast()" class="btn btn-default">Afficher toast</button></td>                 
+                    <td><textarea class="form-control">Permet d'afficher une notification avec toast voici les infomations du plugin http://tamerayd.in/ngToast/ </textarea></td>
+                </tr>
+                <tr>
+                    <td>Filtre saisie clavier</td>                    
+                    <td><input type="text" class="form-control" placeholder="1234567890" ng-numeric ng-model="int"/></td>                 
+                    <td><textarea class="form-control">Saisie de chiffre seulement NB: il faut ajouter un ng-model pour l'utiliser. Ajouter ng-numeric comme attribut dans l'input</textarea></td>
+                </tr>
+                <tr>
+                    <td>Activation menu</td>                    
+                    <td><button ng-click="actionOuvrirPageDefault()" class="btn btn-default">Ouvrir Default et focus menu</button></td>                
+                    <td><textarea class="form-control">Permet de changer le menu actif</textarea></td>
+                </tr>
+                <tr>
+                    <td>Champ avec une taille dynamique</td>                    
+                    <td><textarea class="form-control" data-autogrow>Textarea avec qui s'agrandi par rapport au contenu</textarea></td>
+                    <td><textarea class="form-control" >Ajouter "data-autogrow" comme attribut dans textarea </textarea></td>
+                </tr>
+                <tr>
+                    <td>Multiple filtre (utiliser "raptorFilter" au lieu de "filter" natif)</td>                    
+                    <td><input class="form-control" ng-model="superFilter" placeholder="Filtre séparer par un espace"/></td>
+                    <td>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Titre1</th>
+                                <th>Titre2</th>
+                                <th>Titre3</th>
+                            </tr>
+                            <tr ng-repeat=" data in datas_myfilter| raptorFilter : superFilter">
+                                <td ng-bind="data.id"></td>
+                                <td ng-bind="data.name"></td>
+                                <td ng-bind="data.about"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Auto complete</td>                    
+                    <td>
+                        <input 
+                               class="form-control"
+                               required="" 
+                               name="sector" 
+                               type="text" 
+                               ng-model="Projects" 
+                               auto-complete="autoCompAllProjects" />           
+                    </td>
+                    <td><textarea class="form-control" >Autocomplete permet de faire dans un complétion automatique</textarea></td>
+                </tr>
+            </tbody>
+        </table>  
+        <hr>
+    </div>      
+</div>
+<br/>
+<div>
+
+</div>
+<br/>
+<p>Controller :{{yourName}}</p>
+<div>Postgres</div>
+<ul>
+    <li ng-repeat="data in datas">{{data.datid}}</li>
+</ul>
+<div ng-modaldefault></div>
+<div ng-modaldloader></div>
+<div ng-notification></div>
+<toast></toast>

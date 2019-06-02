@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-1" >
+        <label>Période du:</label>
+    </div>
+    <div class="col-md-4" >
+        <input type="text" class="form-control" ng-datepicker ng-model="modelDebut" name="" >
+    </div>
+    <div class="col-md-1 text-center">
+        <label>au:</label>        
+    </div>
+    <div class="col-md-4">
+        <input type="text" class="form-control" ng-datepicker ng-model="modelFin" name="">
+    </div>
+    <div class="col-md-2 ">
+        <div class="">
+            <button class="btn btn-success" ng-click="actionRechercher(modelDebut, modelFin)">Rechercher</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div id="chart" class="col-md-12 height-canvas2">
+    </div>
+</div>
+<div class="col-md-12">
+        <table class="table table-bordered table-striped margin-top">
+            <tr>
+                <th>Nom des etudes en cours</th>
+                <th>Type de traitement</th>
+                <th>Statut</th>
+                <th>Date de reception</th>
+                <th>Date de remise de l'etude</th>
+                
+            </tr>
+            <tr ng-repeat="x in names">
+                <td>{{x.nometude}}</td>
+                <td>{{x.type}}</td>
+                <td>{{x.statut}}</td>
+                <td>{{x.date_reception}}</td>
+                <td>{{x.date_remise}}</td>
+                
+            </tr>
+        </table>
+        <button class="btn btn-primary pull-right" ng-click="export(modelDebut, modelFin)">
+      <span class="glyphicon glyphicon-share"></span>
+ Export  Excel
+    </button>
+    </div>
+    
+<div ng-modaldefault></div>
+<div ng-modaldloader></div>
+

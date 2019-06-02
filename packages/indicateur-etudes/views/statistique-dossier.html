@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-md-1" >
+        <label>Période du:</label>
+    </div>
+    <div class="col-md-4" >
+        <input type="text" class="form-control" ng-datepicker ng-model="modelDebut" name="" >
+    </div>
+    <div class="col-md-1 text-center">
+        <label>au:</label>        
+    </div>
+    <div class="col-md-4">
+        <input type="text" class="form-control" ng-datepicker ng-model="modelFin" name="">
+    </div>
+    <div class="col-md-2 ">
+        <div class="">
+            <button class="btn btn-success" ng-click="actionRechercher(modelDebut, modelFin)">Rechercher</button>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <div id="chart1" class="col-md-6 height-canvas">
+    </div>
+</div>
+<div class="row">
+<div class="col-md-6 margin-top">
+        <table class="table table-bordered" style="text-align: left; width: 400px;padding-top: 100px;" border="1" cellspacing="0" cellpadding="4">
+            <tr>
+                <th>Libéllé</th>
+                <th class="text-center">Nombre</th>
+                <th>Afficher</th>
+            </tr>
+            <tr ng-repeat="x in names">
+                <td>Dossiers complets</td>
+                <td class="text-center">{{x.complet}}</td>
+                <td><button class="btn btn-success" ng-click="voirDetail1(modelDebut,modelFin,x.complet)">Detail</button></td>
+            </tr>
+            <tr ng-repeat="x in names">
+                <td>Dossiers incomplets</td>
+                <td class="text-center">{{x.ncomplet}}</td>
+                <td><button class="btn btn-success" ng-click="voirDetail2(modelDebut,modelFin,x.ncomplet)">Detail</button></td>
+            </tr>
+             <tr ng-repeat="x in names">
+                <td>Total </td>
+                <td class="text-center">{{x.nbtotal}}</td>
+                <td><button class="btn btn-success" ng-click="voirDetail3(modelDebut,modelFin,x.nbtotal)">Detail</button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-6 margin-top">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Date reception</th>
+                    <th>Nom de l'etude correspondante</th>
+                    <th>categorie</th>
+                    
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="list in listgroupesd">
+                    <td ng-bind="list.date_reception"></td>
+                    <td ng-bind="list.nom"></td>
+                     <td ng-bind="list.libelle"></td>
+                    
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div ng-modaldefault></div>
+<div ng-modaldloader></div>
+

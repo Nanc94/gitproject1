@@ -1,0 +1,61 @@
+<div ng-init="search()">
+    <div>
+        <div class="row espacetopbot">
+            <div class="col-sm-2">
+                <input type="text" class="form-control" placeholder="Par page" ng-model="itemsPerPage" ng-blur="search()"/>
+            </div>
+            <div class="col-sm-8"></div>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" placeholder="Recherche" ng-model="filtre"/>
+            </div>
+        </div>
+    </div>
+    <table class="table table-striped table-condensed table-hover table-bordered">
+        <thead>
+            <tr>
+                <th class="id cursor-pointer" ng-custom-sort="" order="'id'" sort="sort">Id</th>
+                <th class="name cursor-pointer" ng-custom-sort="" order="'name'" sort="sort">Name</th>
+                <th class="description cursor-pointer" ng-custom-sort="" order="'description'" sort="sort">Description</th>
+                <th class="field3 cursor-pointer" ng-custom-sort="" order="'field3'" sort="sort">Field 3</th>
+                <th class="field4 cursor-pointer" ng-custom-sort="" order="'field4'" sort="sort">Field 4</th>
+                <th class="field5 cursor-pointer" ng-custom-sort="" order="'field5'" sort="sort">Field 5</th>
+            </tr>
+        </thead>
+        <tfoot>
+        <td colspan="6">
+            <div class="pagination pull-right">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li  class="page-item" ng-class="{disabled: currentPage == 0}">
+                            <a class="page-link" href ng-click="prevPage()">« Précédente</a>
+                        </li>
+
+                        <li class="page-item" ng-repeat="n in range(pagedItems.length, currentPage, currentPage + gap)"
+                            ng-class="{active: n == currentPage}"
+                            ng-click="setPage()">
+                            <a class="page-link" href ng-bind="n + 1">1</a>
+                        </li>
+
+                        <li class="page-item" ng-class="{disabled: (currentPage) == pagedItems.length - 1}">
+                            <a class="page-link" href ng-click="nextPage()">Suivant »</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </td>
+        </tfoot>
+        <!--<pre>pagedItems.length: {{pagedItems.length|json}}</pre>
+        <pre>currentPage: {{currentPage|json}}</pre>
+        <pre>currentPage: {{sort|json}}</pre>-->
+        <tbody>
+            <tr ng-repeat="item in pagedItems[currentPage]| orderBy:sort.sortingOrder:sort.reverse | filter:filtre">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.field3}}</td>
+                <td>{{item.field4}}</td>
+                <td>{{item.field5}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

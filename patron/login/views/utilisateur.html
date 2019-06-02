@@ -1,0 +1,88 @@
+<div class="espace-user">
+    <div class="add-user">
+        <div class="force-ligne espace-aeration">        
+            <label class="length-label">Création utilisateur avec ses droits:</label>
+        </div>
+        <div class="position-tab">
+            <table class="table-add">
+                <tr>
+                    <th class="espace-entre-matricule">Matricule</th>
+                    <th class="espace-entre-tableau">Consulter</th>
+                    <th class="espace-entre-tableau">Ajouter</th>
+                    <th class="espace-entre-tableau">Editer</th>
+                    <th class="espace-entre-tableau">Supprimer</th>
+                    <th class="espace-entre-tableau font-bold">Administrateur</th>
+                    <th class="espace-entre-tableau"></th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="matricule" class="form-control text-center" ng-model="varUser.matricule"></td>
+                    <td><input type="checkbox" class="form-control" ng-model="varUser.consulter"></td>
+                    <td><input type="checkbox" class="form-control" ng-model="varUser.ajouter"></td>
+                    <td><input type="checkbox" class="form-control" ng-model="varUser.editer"></td>
+                    <td><input type="checkbox" class="form-control" ng-model="varUser.supprimer"></td>
+                    <td><input type="checkbox" class="form-control" ng-model="varUser.admin"></td>
+                    <td class="expace-table-btn">
+                        <button class="btn btn-success width-btn force-btn-correction" ng-click="ajouterUtilisateur(varUser)">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span>
+                        </button>
+                    </td>
+                    <td></td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="lister-utilisateur">
+        <div class="force-ligne espace-aeration">        
+            <label class="length-label">Liste des utilisateur avec ses droits:</label>            
+        </div>
+        <div class="position-recherche">
+            <input type="text" class="form-control" ng-model="filtreAll" placeholder="Recherche par matricule">
+        </div>
+        <div class="espace-liste-utilisateur">  
+            <div class="content-list">
+                <ul class="ul-style-listview">
+                    <!--<li  class="listview-html active">nomFichier.pdf</li>-->
+                    <li  class="listview-html" ng-class="valstrike[$index]" strike.nomfichier ng-repeat="utilisateur in listAllUtilisateur | filter: filtreAll">
+                        <table class="table-add">
+                            <tr>
+                                <th class="espace-entre-matricule">Matricule</th>
+                                <th class="espace-entre-tableau">Consulter</th>
+                                <th class="espace-entre-tableau">Ajouter</th>
+                                <th class="espace-entre-tableau">Editer</th>
+                                <th class="espace-entre-tableau">Supprimer</th>
+                                <th class="espace-entre-tableau">Administrateur</th>
+                                <th class="espace-btn-anime"></th>
+                                <th class="espace-btn-anime"></th>
+                            </tr>
+                            <tr>
+                                <td>{{utilisateur.matricule}}</td>
+                                <td><input type="checkbox" class="form-control" ng-model="consulter[$index]"></td>
+                                <td><input type="checkbox" class="form-control" ng-model="ajouter[$index]"></td>
+                                <td><input type="checkbox" class="form-control" ng-model="editer[$index]"></td>
+                                <td><input type="checkbox" class="form-control" ng-model="supprimer[$index]"></td>
+                                <td><input type="checkbox" class="form-control" ng-model="admin[$index]"></td>
+                                <td class="expace-table-btn">
+                                    <button class="btn btn-warning" ng-click="saveModif(utilisateur.id, $index, consulter[$index], ajouter[$index], editer[$index], supprimer[$index],admin[$index])">
+                                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                                    </button>
+                                </td>
+                                <td class="expace-table-btn">
+                                    <button class="btn btn-danger" ng-click="supprimerUser(utilisateur.id, $index)">
+                                        <span class="glyphicon glyphicon-trash" aria-hidden="true" ></span>
+                                    </button>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="liste-utilisateur">
+</div>
+<div ng-modale></div>
